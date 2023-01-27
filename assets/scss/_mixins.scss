@@ -1,0 +1,41 @@
+@mixin flexHead {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin btn {
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 1rem;
+    border-style: none;
+    text-align: center;
+    font-weight: 700;
+    margin: 33px auto 0 0;
+    padding: 16px 52px 17px 51px;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+@mixin btn-price {
+    font-family: $f-montserrat;
+    text-decoration: none;
+    font-size: 1.125rem;
+    font-weight: 700;
+    text-transform: none;
+    letter-spacing: normal;
+    margin: 32px auto 0;
+    padding: 19px 41px 20px 40px;
+    border-radius: 8px;
+    display: table;
+}
+
+@mixin s-img {
+    background-size: cover;
+    background-position: 50% 50%;
+    padding: 30px;
+    border-radius: 15px;
+    margin: 15px;
+    flex: 1;
+}
