@@ -17,7 +17,6 @@ $f-lato: Lato, sans-serif;
     padding: 0;
     box-sizing: border-box;
 }
-
 // HTML
 html{
     font-family: sans-serif;
@@ -26,20 +25,17 @@ html{
     overflow-y: auto;
     overflow-x: hidden;
 }
-
 // Container
 .container{
     width: 1140px;
     margin: 0 auto; 
 }
-
 // Content
 .content{
     width: 100%;
     height: auto;
     margin: 0 auto;
 }
-
 // All Style Buttons
 .btn-primary{
     background-color: $c-primary;
@@ -95,3 +91,10 @@ html{
     }
 }
 
+// Responsive for Mobile
+@media screen and (max-width: 768px){
+    .container{
+        width: 100%;
+        margin: 0 auto;
+    }
+}

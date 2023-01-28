@@ -123,6 +123,12 @@ html {
   object-fit: contain;
 }
 
+@media screen and (max-width: 768px) {
+  .container {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
 header {
   background-color: #000;
   color: #fff;
@@ -350,58 +356,46 @@ header .menu-icon {
 }
 
 .service {
+  width: 100%;
+  margin: 0 auto;
   background-color: #292d33;
-  display: block;
+  display: inline-table;
 }
 .service .content {
   width: 1140px;
-  min-height: 739px;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  margin: 0 auto;
+  margin-top: 60px;
 }
 .service .content .row {
-  margin: 60px 0 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 30px;
 }
-.service .content .row .intro {
-  flex-direction: column;
-  min-height: fit-content;
-  display: flex;
-  flex: 1 1 auto;
-  pointer-events: initial;
-  margin: -15px;
-}
-.service .content .row .intro .row-card {
-  flex: 30 0 auto;
-  min-height: fit-content;
-  max-width: 100%;
-  display: flex;
-  pointer-events: initial;
-}
-.service .content .row .intro .card {
+.service .content .row .card {
   background-color: #f2f2f2;
-  border-radius: 15px;
+  border-radius: 20px;
   padding: 30px;
-  justify-content: center;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  flex: 1;
-  max-width: 100%;
-  transition-duration: inherit;
-  margin: 15px;
 }
-.service .content .row .intro .card.bg-primary {
+.service .content .row .card h4 {
+  font-family: Montserrat, sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.2;
+  font-weight: 700;
+  margin: 30px auto 0 0;
+}
+.service .content .row .card .description {
+  margin: 20px auto 0 0;
+}
+.service .content .row .bg-primary {
   background-color: #1659d7;
   color: #fff;
 }
-.service .content .row .intro .card.bg-primary .title {
+.service .content .row .bg-primary h4 {
   font-weight: 700;
   font-size: 1.875rem;
   margin: 0 auto 0 0;
 }
-.service .content .row .intro .card.bg-primary a {
+.service .content .row .bg-primary a {
   color: #fff;
   font-weight: 700;
   font-size: 0.875rem;
@@ -413,41 +407,24 @@ header .menu-icon {
   padding: 0;
   border-width: 0 0 2px 0;
   border-style: solid;
+  display: table;
 }
-.service .content .row .intro .card.bg-primary a:hover {
+.service .content .row .bg-primary a:hover {
   color: #a4c2fa;
 }
-.service .content .row .intro .card .title {
-  font-weight: 700;
-  margin: 30px auto 0 0;
-  font-family: Montserrat, sans-serif;
-  font-size: 1.5rem;
-  line-height: 1.2;
-  display: table;
-  align-self: flex-start;
-}
-.service .content .row .intro .card .description {
-  margin: 20px auto 0 0;
-  font-size: 1rem;
-  line-height: 1.6;
-}
-.service .content .row .intro .card-img {
+.service .content .row .card-img {
   background-image: url("/assets/media/service/1.jpg");
+  min-height: 264px;
   background-size: cover;
   background-position: 50% 50%;
   padding: 30px;
-  border-radius: 15px;
-  margin: 15px;
-  flex: 1;
 }
-.service .content .row .intro .card-img-2 {
+.service .content .row .card-img-2 {
   background-image: url("/assets/media/service/2.jpg");
+  min-height: 264px;
   background-size: cover;
   background-position: 50% 50%;
   padding: 30px;
-  border-radius: 15px;
-  margin: 15px;
-  flex: 1;
 }
 .service .content .f-link {
   color: #b3b3b3;
@@ -617,10 +594,9 @@ header .menu-icon {
   max-width: 100%;
   flex: 1 1 auto;
   display: flex;
+  flex-wrap: nowrap;
 }
 .startup .content .row .col {
-  flex: 0 0 41.66666667%;
-  max-width: 41.66666667%;
   min-width: 41.66666667%;
   min-height: 702px;
   text-align: left;
@@ -988,6 +964,7 @@ header .menu-icon {
   flex: 1 1 auto;
   display: flex;
   gap: 30px;
+  justify-content: center;
 }
 .contact .content .row .contact-info {
   color: #fff;
@@ -1045,6 +1022,8 @@ header .menu-icon {
   background-color: #fff;
   color: #111111;
   min-height: 610px;
+  max-width: 50%;
+  min-width: 50%;
   border-radius: 30px;
   text-align: center;
   position: relative;
@@ -1136,4 +1115,248 @@ footer .foot-bot .foot-link {
 footer .foot-bot .foot-link:hover {
   color: #a1a1a1;
   text-decoration: none;
+}
+
+@media screen and (max-width: 768px) {
+  header .container {
+    padding: 0px 30px;
+  }
+  header nav {
+    display: none;
+  }
+  header .menu-icon {
+    display: block;
+    width: 24px;
+    height: 24px;
+    background-image: url("/assets/media/icon/menu-icon.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  header .menu-icon:hover {
+    background-image: url("/assets/media/icon/menu-icon-hover.png");
+  }
+  .services {
+    display: inline-block;
+  }
+  .services img {
+    height: 448px;
+  }
+  .services .content-list {
+    width: 340px;
+  }
+  .services .content-list .row {
+    width: 100%;
+    display: grid;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: auto;
+    grid-template-columns: repeat(1, 100%);
+    min-height: 275px;
+    grid-gap: 30px;
+  }
+  .services .content-list .row .card-top {
+    background-image: linear-gradient(#555c66, #292d33);
+    box-shadow: 5px 5px 20px 0 rgba(0, 0, 0, 0.4);
+    padding: 30px;
+    border-radius: 30px;
+  }
+  .about {
+    min-height: 200px;
+    display: block;
+  }
+  .about .content {
+    display: block;
+  }
+  .about .about-left {
+    max-width: 100%;
+    padding: 30px;
+    display: table-cell;
+  }
+  .about .about-left .list h2 {
+    font-size: 1.5rem;
+  }
+  .about .about-left .list img {
+    height: 89px;
+    width: 200px;
+  }
+  .about .about-right {
+    max-width: 100%;
+    padding: 30px;
+  }
+  .about .about-right .list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 10px 0 0;
+  }
+  .about .about-right .list .category {
+    margin-bottom: 27px;
+  }
+  .about .about-right .list .category h6 {
+    margin-top: 20px;
+    margin-left: 0;
+    width: auto;
+  }
+  .about .about-right .list .category .description {
+    margin-left: 0;
+  }
+  .service .content {
+    width: 100%;
+    margin-top: 60px;
+    padding: 0 22px;
+  }
+  .service .content .row {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    gap: 30px;
+  }
+  .team {
+    min-height: 857px;
+    text-align: center;
+    display: block;
+  }
+  .team .content {
+    color: #fff;
+  }
+  .team .content .bg-dark {
+    height: 314px;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .team .content h2 {
+    font-size: 2.25rem;
+  }
+  .team .row {
+    width: 340px;
+    margin: 35px auto 0;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  .team .row .col {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: auto;
+    grid-template-columns: 100%;
+  }
+  .startup {
+    overflow: visible;
+    min-height: 702px;
+    background-image: url("/assets/media/other/bg-light_grey.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    color: #111111;
+    object-fit: cover;
+    display: block;
+  }
+  .startup .content {
+    width: calc((100% - 340px) / 2 + 340px);
+  }
+  .startup .content .row {
+    display: block;
+  }
+  .startup .content .row .col {
+    padding-bottom: 30px;
+    padding-left: 10px;
+    display: table-cell;
+  }
+  .startup .content .row .col h1 {
+    font-size: 2.25rem;
+  }
+  .startup .content .row .col-img {
+    min-height: 359px;
+    max-width: 100%;
+  }
+  .vision {
+    min-height: 972px;
+  }
+  .vision .bg-primary {
+    height: 631px;
+    background-image: none;
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #fff;
+    background-color: #1659d7;
+  }
+  .vision img {
+    width: 340px;
+    height: 234px;
+    margin-left: calc((100% - 340px) / 2);
+  }
+  .vision .container {
+    width: 340px;
+    margin-top: 20px;
+    margin-right: auto;
+  }
+  .vision .container .row {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .vision .container .row h2 {
+    font-size: 1.875rem;
+  }
+  .pricing .content {
+    width: 340px;
+  }
+  .pricing .content h1 {
+    font-size: 1.5rem;
+    width: 340px;
+    display: block;
+  }
+  .pricing .content .description {
+    width: 340px;
+  }
+  .pricing .content .row .col {
+    grid-template-columns: 100%;
+  }
+  .consulting {
+    min-height: 1893px;
+  }
+  .consulting .content .top {
+    width: 340px;
+    min-height: 306px;
+  }
+  .consulting .content .top h1 {
+    font-size: 1.875rem;
+  }
+  .consulting .content img {
+    height: 410px;
+    margin-top: 1079px;
+    object-position: 15.24% 53.21%;
+  }
+  .consulting .content .row {
+    width: 340px;
+    margin-top: -1468px;
+    display: flex;
+    flex-direction: column;
+  }
+  .contact .content {
+    min-height: 103px;
+    width: 340px;
+  }
+  .contact .content .row {
+    flex-wrap: wrap;
+  }
+  .contact .content .row .contact-info {
+    max-width: 100%;
+    min-width: 100%;
+    padding: 20px;
+  }
+  .contact .content .row .contact-info h3 {
+    font-size: 1.5rem;
+  }
+  .contact .content .row .contact-info h4 {
+    font-size: 1.5rem;
+  }
+  .contact .content .row .request {
+    max-width: 100%;
+    min-width: 100%;
+    min-height: 100%;
+    padding: 20px;
+  }
+  .contact .content .row .request .col {
+    width: 100%;
+  }
 }
